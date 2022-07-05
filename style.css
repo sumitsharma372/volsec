@@ -1,0 +1,62 @@
+form{
+    width: 70%;
+    padding: 20px;
+    border-radius: 5px 0 5px 0;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+form .field {
+    display: flex;
+    margin:5px;
+}
+form .field input{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    border: 1px solid #9a9c9a;
+}
+form label {
+    width: 400px;
+}
+.container form {
+    background-color: #ccc;
+    margin-top: 10px;
+}
+form button{
+    border: none;
+    border-radius: 10px;
+    padding: 3px 10px;
+    width: 50%;
+    max-width: 200px;
+    background-color: blueviolet;
+    color: white;
+    margin-top: 10px;
+}
+.container h4 {
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    form .field {
+        flex-direction: column;
+    }
+}
+.btn-close{
+    border:none;
+    background-color: transparent;
+}
+.modal {
+    display: none;
+    position: relative;
+}
+.modal .xmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.show-modal{
+    display: block;
+}
+
