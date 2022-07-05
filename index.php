@@ -2,12 +2,12 @@
 
 use LDAP\Result;
 
-$hostname = "sql205.epizy.com";
-$username = "epiz_32108533";
-$password = "gSCBcDZxzMF";
-$dbname = "epiz_32108533_vols";
-
-$conn = mysqli_connect($hostname, $username, $password, $dbname);
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "vols";
+$port = "3307";
+$conn = mysqli_connect($hostname, $username, $password, $dbname,$port);
 
 if (!$conn) {
     die("Failed to connect: " . mysqli_connect_error());
@@ -60,40 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <!-- Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModalLabel">
-        Edit Modal
-    </button> -->
-
-    <!-- Modal -->
-    <!-- <div class="modal">
-        <h4>Edit contents</h4>
-        <button class="xmark"><i class="fa-solid fa-xmark"></i></button>
-        <form action="/crud/index.php" method="post">
-            <div class="field roll">
-                <label for="roll-edit">Roll No</label>
-                <input type="text" name="roll-edit" id="roll-edit" required>
-            </div>
-            <div class="field name">
-                <label for="name-edit">Full Name</label>
-                <input type="text" name="name-edit" id="name-edit" required>
-            </div>
-            <div class="field iemail">
-                <label for="iemail-edit">Institute email</label>
-                <input type="email" name="imail-edit" id="iemail-edit">
-            </div>
-            <div class="field pemail">
-                <label for="pemail-edit">Personal email</label>
-                <input type="email" name="pmail-edit" id="pemail-edit">
-            </div>
-            <div class="field address">
-                <label for="address-edit">Address</label>
-                <input type="text" name="address-edit" id="address-edit">
-            </div>
-            <button type="submit">Update</button>
-
-        </form>
-    </div> -->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">VOLSEC</a>
@@ -201,19 +167,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $('#myTable').DataTable();
         });
     </script>
-    <!-- <script>
-        const modal = document.querySelector('.modal'),
-            closeBtn = document.querySelector('.modal .xmark'),
-            editBtn = document.querySelector('.edit');
-
-        editBtn.addEventListener("click", () => {
-            modal.classList.add('show-modal');
-        })
-
-        closeBtn.addEventListener("click", () => {
-            modal.classList.remove('show-modal');
-        })
-    </script> -->
     <script>
         deletes = document.getElementsByClassName('delete');
         Array.from(deletes).forEach((element) => {
